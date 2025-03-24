@@ -2,11 +2,8 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html lang="vi">
+    <Html lang="en">
       <Head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Trang Chủ</title>
       </Head>
       <body>
         <Main />
