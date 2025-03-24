@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding: 5px;
+    background-color: white; /* Màu nền xám nhạt */
+    border-radius: 8px;
+    width: 100%;
+  }
+  
+  .box {
+    flex: 1;
+    padding: 8px;
+    background-color: white;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .text {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .strong {
+    font-weight: bold;
+  }
+  

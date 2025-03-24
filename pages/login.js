@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { Box, TextField, Button, Typography } from "@mui/material";
-
+import styles from "../styles/loginForm.module.css"
 console.log("Trang đang chạy: login.tsx");
 
 export default function Login() {
@@ -9,28 +9,53 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const router = useRouter();
 
-  const handleLogin = (e) => {
-    e.preventDefault(); // Ngăn form load lại trang
-
+  const handleLogin = async (e) => {
+    e.preventDefault();
     console.log("Đang xử lý đăng nhập...");
-    console.log("Username:", username);
-    console.log("Password:", password);
-
-    // Kiểm tra username, password (chỉ dùng khi chưa có backend)
-    if (username === "helen" && password === "123456") {
-      console.log("Đăng nhập thành công!");
-      localStorage.setItem("user", JSON.stringify({ username }));
-      router.push("/dashboard"); // Chuyển hướng tới dashboard
-    } else {
-      console.log("Tên đăng nhập hoặc mật khẩu không đúng!");
-      alert("Tên đăng nhập hoặc mật khẩu không đúng!");
+    try {
+      console.log("🔄 Bắt đầu gọi API login...");
+      const res = await fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+      
+      console.log("📌 Phản hồi từ server:", res);
+    
+      const text = await res.text(); // Lấy dữ liệu dưới dạng text
+     
+      console.log("📌 Nội dung phản hồi (raw text):", text);
+    
+      let data;
+      try {
+        data = JSON.parse(text); // Chỉ parse nếu text hợp lệ
+      } catch (parseError) {
+        console.error("❌ Lỗi khi parse JSON:", parseError);
+        throw new Error("Phản hồi từ server không phải JSON hợp lệ!");
+      }
+      
+      if (res.ok && data.user) {
+       
+        console.log("✅ Đăng nhập thành công!", data);
+        localStorage.setItem("user", JSON.stringify(data.user));
+        router.push("/dashboard");
+      } else {
+        alert("dang nhap that bai");
+        console.log("❌ Đăng nhập thất bại:", data.message);
+        alert(data.message);
+      }
+    } catch (error) {
+      console.error("🚨 Lỗi kết nối đến server:", error);
+      alert("Không thể kết nối đến server!");
     }
+    
   };
+  
 
   return (
-    <Box sx={{ textAlign: "center", mt: 5 }}>
+    <Box className={styles.container}>
       <Typography variant="h4">Đăng Nhập</Typography>
-      <Box component="form" onSubmit={handleLogin} sx={{ mt: 2 }}>
+      <Box component="form" onSubmit={handleLogin} className={styles.formBox}>
         <TextField
           label="Username"
           fullWidth
@@ -53,3 +78,4 @@ export default function Login() {
     </Box>
   );
 }
+

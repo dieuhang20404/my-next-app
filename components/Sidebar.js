@@ -1,31 +1,33 @@
 import Link from "next/link";
-console.log("dang chay sidebar");
+import styles from "../styles/sidebar.module.css"; // Import CSS module
+
 export default function Sidebar() {
+  const handleLogout = () => {
+    alert("Đang đăng xuất...");
+    console.log("Đang đăng xuất...");
+  };
+
   return (
-    <div className="w-64 h-screen bg-gray-800 text-white flex flex-col p-4">
+    <div className={styles.sidebar}>
       {/* Logo */}
-      <div className="text-center mb-6">
-        <h2 className="text-xl font-bold">🚀 Logo</h2>
+      <div className={styles.logo}>
+        <h2>🚀 QUẢN LÝ NHÀ XE</h2>
       </div>
 
       {/* Menu */}
-      <nav className="flex flex-col gap-4">
-        <Link href="/dashboard" className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600">
-          Dashboard
-        </Link>
-        <Link href="/register-card" className="px-4 py-2 hover:bg-gray-700 rounded">
-          Đăng ký thẻ tháng
-        </Link>
-        <Link href="/manage-cards" className="px-4 py-2 hover:bg-gray-700 rounded">
-          Quản lý thẻ xe
-        </Link>
-        <Link href="/revenue-report" className="px-4 py-2 hover:bg-gray-700 rounded">
-          Báo cáo doanh thu
-        </Link>
-        <Link href="/manage-staff" className="px-4 py-2 hover:bg-gray-700 rounded">
-          Quản lý nhân viên
-        </Link>
+      <nav>
+        <Link href="/dashboard" className={styles.menuItem}>Trang chủ</Link>
+        <Link href="/register-card" className={styles.menuItem}>Đăng ký thẻ tháng</Link>
+        <Link href="/manage-cards" className={styles.menuItem}>Quản lý thẻ xe</Link>
+        <Link href="/revenue-report" className={styles.menuItem}>Báo cáo doanh thu</Link>
+        <Link href="/price-setting" className={styles.menuItem}>Thiết lập giá vé</Link>
+        <Link href="/manage-staff" className={styles.menuItem}>Quản lý nhân viên</Link>
       </nav>
+
+      {/* Đăng xuất */}
+      <button onClick={handleLogout} className={styles.logoutBtn}>
+        Đăng xuất
+      </button>
     </div>
   );
 }

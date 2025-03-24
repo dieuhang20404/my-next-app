@@ -1,0 +1,22 @@
+.container {
+    display: flex; /* Kích hoạt Flexbox */
+    min-height: 100vh; /* Chiều cao tối thiểu bằng màn hình */
+    width: 100%; /* Đảm bảo full chiều rộng */
+}
+.sidebar {
+    width: 20rem; /* Cố định chiều rộng 256px */
+    height: 100vh; /* Full chiều cao */
+    background-color: #1f2937;
+    color: white;
+    padding: 1rem;
+    position: flex;
+    left: 0;
+    top: 0;
+}
+
+.flex-1 {
+    margin-left: 16rem; /* Chừa chỗ cho sidebar */
+    flex-grow: 1; /* Mở rộng nội dung chính */
+
+}
+

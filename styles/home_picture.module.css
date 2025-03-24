@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Khoảng cách giữa các camera */
+  }
+  
+  .cameraBox {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Đảm bảo cameraBox chiếm toàn bộ chiều rộng */
+  }
+  
+  .cameraFeed {
+    width: 100%; /* Hình ảnh giãn hết chiều rộng của cameraBox */
+    height: auto; /* Giữ tỉ lệ khung hình */
+    border-radius: 8px;
+  }
+  

@@ -1,0 +1,72 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; /* Giúp form tự xuống dòng nếu màn hình nhỏ */
+}
+
+.form_container {
+  flex: 1;
+  min-width: 350px; /* Giới hạn kích thước nhỏ nhất */
+  max-width: 500px; /* Giới hạn kích thước tối đa */
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  max-height: 500px; /* Giới hạn chiều cao */
+  overflow: auto; /* Hiển thị thanh cuộn khi cần */
+  margin-left: 50px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form_group {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.form_group label {
+  font-weight: bold;
+}
+
+.form_group input,
+.form_group select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+.switch_button{
+  background-color: white;
+  margin: 2px;
+  border: 2px solid black;
+  padding: 5px;
+  text-align: center;
+  border-radius: 4px;
+}
+.active {
+  background-color: rgb(99, 248, 108); /* Màu khi được click */
+  color: black; /* Màu chữ */
+}
