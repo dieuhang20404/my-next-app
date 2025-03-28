@@ -31,6 +31,17 @@
   gap: 5px;
   margin-bottom: 5px;
 }
+.form_register{
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.form_{
+  display: flex;
+  justify-Content: center;
+  height: auto;
+}
 
 .form_group label {
   font-weight: bold;
@@ -46,17 +57,19 @@
 }
 
 .button {
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #007bff;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  background-color: #f39c12;
   color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
 .button:hover {
-  background-color: #0056b3;
+  background-color: #f39d129e;
 }
 .switch_button{
   background-color: white;
@@ -69,4 +82,17 @@
 .active {
   background-color: rgb(99, 248, 108); /* Màu khi được click */
   color: black; /* Màu chữ */
+}
+.input {
+  border: 1px solid #000; /* Đảm bảo có viền */
+  background: white; /* Đảm bảo input có nền */
+  min-width: 200px; /* Đặt kích thước tối thiểu */
+  padding: 5px;
+}
+.selectBox{
+  padding: 5px;
+    font-size: 16px;
+    min-width: 150px; 
+    background-color: white;
+    border: 2 solid black;
 }

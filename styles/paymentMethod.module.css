@@ -1,0 +1,39 @@
+.paymentContainer {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+    margin-top: 20px;
+    font-size: 16px;
+    flex-wrap: nowrap;
+   
+}
+
+.selectBox {
+    padding: 5px;
+    font-size: 16px;
+    min-width: 150px; /* Đảm bảo select không quá nhỏ */
+    border: 2 solid black;
+}
+
+/* Chỉnh lại nhãn (label) */
+.paymentLabel {
+    width: auto;
+    white-space: nowrap; 
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.qrContainer {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.qrImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

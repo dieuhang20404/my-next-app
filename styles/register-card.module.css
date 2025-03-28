@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #1a202c;
+  padding: 20px;
+  color: white;
+}
+
+.main_content {
+  flex-grow: 1; /* Tự mở rộng theo chiều ngang */
+  padding: 20px;
+  margin-left: 60px;
+}
+.button {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  margin-bottom: 20px;
+  background-color: white ;
+}
+.box:hover{
+  background-color: #3498dbd2;
+}
+.box {
+  flex: 1;
+  padding: 8px;
+  background-color: #3498db;
+  border: 1px solid #ecf0f1 ;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+
+

@@ -43,7 +43,7 @@ export default function ParkingInfo() {
         <p className={styles.text}>🅿️ Vị trí còn trống: <strong className={styles.strong}>{tongSoViTri - soXeTrongBai}</strong></p>
       </div>
       <div className={styles.box}>
-        <p className={styles.text}>👤 Nhân viên đang trực:<br/> <strong className={styles.strong}>{nhanVienTruc}</strong></p>
+        <p className={styles.text}>👤 Nhân viên:<br/> <strong className={styles.strong}>{nhanVienTruc}</strong></p>
       </div>
       <div className={styles.box}>
         <p className={styles.text}>⏰ <strong className={styles.strong}>{currentTime.toLocaleString()}</strong></p>
